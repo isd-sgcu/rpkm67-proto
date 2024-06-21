@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package rpkm67.backend.selection.v1;
+
+option go_package = "rpkm67/backend/selection/v1";
+
+service SelectionService {
+  rpc Create(CreateSelectionRequest) returns (CreateSelectionResponse){}
+  rpc FindByStudentId(FindByStudentIdSelectionRequest) returns (FindByStudentIdSelectionResponse) {}
+  rpc Update(UpdateSelectionRequest) returns (UpdateSelectionResponse){}
+}
+
+message Selection{
+  string id = 1;
+  string userId = 2;
+  repeated string baanIds = 3;
+}
+
+// Create
+message CreateSelectionRequest{
+  string userId = 1;
+  repeated string baanIds = 2;
+}
+
+message CreateSelectionResponse{
+  Selection selection = 1;
+}
+
+// FindByStudentId
+message FindByStudentIdSelectionRequest{
+  string userId = 1;
+}
+
+message FindByStudentIdSelectionResponse{
+  Selection selection = 1;
+}
+
+// Update
+message UpdateSelectionRequest{
+  Selection selection = 1;
+}
+
+message UpdateSelectionResponse{
+  bool success = 1;
+}

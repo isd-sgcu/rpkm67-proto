@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package rpkm67.checkin.checkin.v1;
+
+option go_package = "rpkm67/checkin/checkin/v1";
+
+service CheckInService {
+  rpc Create(CreateCheckInRequest) returns (CreateCheckInResponse){}
+  rpc FindByStudentId(FindByStudentIdCheckInRequest) returns (FindByStudentIdCheckInResponse){}
+}
+
+message CheckIn{
+  string id = 1;
+  string studentId = 2;
+  string event = 3;
+}
+
+// Create
+message CreateCheckInRequest{
+  string studentId = 1;
+  string event = 2;
+}
+
+message CreateCheckInResponse{
+  CheckIn checkIn = 1;
+}
+
+// FindByStudentId
+message FindByStudentIdCheckInRequest{
+  string studentId = 1;
+}
+
+message FindByStudentIdCheckInResponse{
+    repeated CheckIn checkIns = 1;
+}

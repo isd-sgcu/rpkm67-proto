@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package rpkm67.auth.user.v1;
+
+option go_package = "rpkm67/auth/user/v1";
+
+service UserService {
+  rpc Create(CreateRequest) returns (CreateResponse){}
+  rpc FindOne(FindOneRequest) returns (FindOneResponse){}
+  // rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
+  // rpc Delete(DeleteRequest) returns (DeleteResponse){}
+}
+
+message User{
+  string id = 1;
+  string studentId = 2;
+  string password = 3;
+  string firstname = 4;
+  string lastname = 5;
+  string tel = 6;
+  string role = 7;
+}
+
+// Create
+message CreateRequest{
+  string studentId = 1;
+  string password = 2;
+  string firstname = 3;
+  string lastname = 4;
+  string tel = 5;
+  string role = 6;
+}
+
+message CreateResponse{
+  User user = 1;
+}
+
+// FindOne
+message FindOneRequest{
+  string id = 1;
+}
+
+message FindOneResponse{
+  User user = 1;
+}
+
+// Update
+// message UpdateUserRequest{
+//   string id = 1;
+//   string email = 2;
+//   string password = 3;
+//   string firstname = 4;
+//   string lastname = 5;
+// }
+
+// message UpdateUserResponse{
+//   User user = 1;
+// }
+
+// Delete
+// message DeleteRequest{
+//   string id = 1;
+// }
+
+// message DeleteResponse{
+//   bool success = 1;
+// }

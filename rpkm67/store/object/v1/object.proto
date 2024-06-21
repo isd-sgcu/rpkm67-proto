@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package rpkm67.file.image.v1;
+
+option go_package = "rpkm67/file/image/v1";
+
+service ObjectService {
+  rpc FindByKey(FindByKeyObjectRequest) returns (FindByKeyObjectResponse){}
+  rpc Upload(UploadObjectRequest) returns (UploadObjectResponse){}
+  rpc DeleteByKey(DeleteByKeyObjectRequest) returns (DeleteByKeyObjectResponse) {}
+}
+
+message Object{
+  string url = 1;
+  string objectKey = 2;
+}
+
+// FindByKey
+message FindByKeyObjectRequest{}
+
+message FindByKeyObjectResponse{
+  Object object = 1;
+}
+
+// Upload
+message UploadObjectRequest{
+  string filename = 1;
+  bytes data = 2;
+}
+
+message UploadObjectResponse{
+  Object object = 1;
+}
+
+// DeleteByKey
+message DeleteByKeyObjectRequest{
+  string objectKey = 1;
+}
+
+message DeleteByKeyObjectResponse{
+  bool success = 1;
+}
