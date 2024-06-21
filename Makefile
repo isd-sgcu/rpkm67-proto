@@ -2,7 +2,7 @@
 
 go:
 	mkdir -p go
-	-cd go; go mod init github.com/isd-sgcu/johnjud-go-proto
+	-cd go; go mod init github.com/isd-sgcu/rpkm67-go-proto
 	perl scripts/go/go.pl
 	cd go; go mod tidy
 
