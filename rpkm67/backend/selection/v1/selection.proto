@@ -6,19 +6,19 @@ option go_package = "rpkm67/backend/selection/v1";
 
 service SelectionService {
   rpc Create(CreateSelectionRequest) returns (CreateSelectionResponse){}
-  rpc FindByStudentId(FindByStudentIdSelectionRequest) returns (FindByStudentIdSelectionResponse) {}
+  rpc FindByGroupId(FindByGroupIdSelectionRequest) returns (FindByGroupIdSelectionResponse) {}
   rpc Update(UpdateSelectionRequest) returns (UpdateSelectionResponse){}
 }
 
 message Selection{
   string id = 1;
-  string userId = 2;
+  string groupId = 2;
   repeated string baanIds = 3;
 }
 
 // Create
 message CreateSelectionRequest{
-  string userId = 1;
+  string groupId = 1;
   repeated string baanIds = 2;
 }
 
@@ -26,12 +26,12 @@ message CreateSelectionResponse{
   Selection selection = 1;
 }
 
-// FindByStudentId
-message FindByStudentIdSelectionRequest{
+// FindByGroupId
+message FindByGroupIdSelectionRequest{
   string userId = 1;
 }
 
-message FindByStudentIdSelectionResponse{
+message FindByGroupIdSelectionResponse{
   Selection selection = 1;
 }
 

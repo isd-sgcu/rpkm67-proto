@@ -7,29 +7,27 @@ option go_package = "rpkm67/auth/user/v1";
 service UserService {
   rpc Create(CreateUserRequest) returns (CreateUserResponse){}
   rpc FindOne(FindOneUserRequest) returns (FindOneUserResponse){}
-  rpc FindByStudentId(FindByStudentIdRequest) returns (FindByStudentIdResponse){}
-  // rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
+  rpc FindByEmail(FindByEmailRequest) returns (FindByEmailResponse){}
+  rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
   // rpc Delete(DeleteRequest) returns (DeleteResponse){}
 }
 
 message User{
   string id = 1;
-  string studentId = 2;
+  string email = 2;
   string password = 3;
   string firstname = 4;
   string lastname = 5;
-  string tel = 6;
-  string role = 7;
+  string role = 6;
 }
 
 // Create
 message CreateUserRequest{
-  string studentId = 1;
+  string email = 1;
   string password = 2;
   string firstname = 3;
   string lastname = 4;
-  string tel = 5;
-  string role = 6;
+  string role = 5;
 }
 
 message CreateUserResponse{
@@ -45,27 +43,28 @@ message FindOneUserResponse{
   User user = 1;
 }
 
-// FindByStudentId
-message FindByStudentIdRequest{
-  string studentId = 1;
+// FindByEmail
+message FindByEmailRequest{
+  string email = 1;
 }
 
-message FindByStudentIdResponse{
+message FindByEmailResponse{
   User user = 1;
 }
 
 // Update
-// message UpdateUserRequest{
-//   string id = 1;
-//   string email = 2;
-//   string password = 3;
-//   string firstname = 4;
-//   string lastname = 5;
-// }
+message UpdateUserRequest{
+  string id = 1;
+  string email = 2;
+  string password = 3;
+  string firstname = 4;
+  string lastname = 5;
+  string role = 6;
+}
 
-// message UpdateUserResponse{
-//   User user = 1;
-// }
+message UpdateUserResponse{
+  User user = 1;
+}
 
 // Delete
 // message DeleteRequest{

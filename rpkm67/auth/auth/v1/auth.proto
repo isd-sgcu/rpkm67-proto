@@ -41,7 +41,7 @@ message RefreshTokenResponse{
 
 // Sign up
 message SignUpRequest {
-  string studentId = 1;
+  string email = 1;
   string password = 2;
   string firstname = 3;
   string lastname = 4;
@@ -55,7 +55,7 @@ message SignUpResponse {
 
 // Sign in
 message SignInRequest {
-  string studentId = 1;
+  string email = 1;
   string password = 2;
 }
 
