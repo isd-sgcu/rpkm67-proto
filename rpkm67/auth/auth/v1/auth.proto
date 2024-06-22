@@ -39,21 +39,19 @@ message RefreshTokenResponse{
   Credential credential = 1;
 }
 
-// Sign up
+// SignUp
 message SignUpRequest {
   string email = 1;
   string password = 2;
   string firstname = 3;
   string lastname = 4;
-  string tel = 5;
-  string role = 6;
 }
 
 message SignUpResponse {
   Credential credential = 1;
 }
 
-// Sign in
+// SignIn
 message SignInRequest {
   string email = 1;
   string password = 2;
@@ -74,7 +72,7 @@ message SignOutResponse {
 
 // Forgot password
 message ForgotPasswordRequest {
-  string tel = 1;
+  string email = 1;
 }
 
 message ForgotPasswordResponse {
