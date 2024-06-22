@@ -7,6 +7,7 @@ option go_package = "rpkm67/auth/user/v1";
 service UserService {
   rpc Create(CreateUserRequest) returns (CreateUserResponse){}
   rpc FindOne(FindOneUserRequest) returns (FindOneUserResponse){}
+  rpc FindByStudentId(FindByStudentIdRequest) returns (FindByStudentIdResponse){}
   // rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
   // rpc Delete(DeleteRequest) returns (DeleteResponse){}
 }
@@ -41,6 +42,15 @@ message FindOneUserRequest{
 }
 
 message FindOneUserResponse{
+  User user = 1;
+}
+
+// FindByStudentId
+message FindByStudentIdRequest{
+  string studentId = 1;
+}
+
+message FindByStudentIdResponse{
   User user = 1;
 }
 
