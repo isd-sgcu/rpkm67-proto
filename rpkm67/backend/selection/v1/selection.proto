@@ -28,7 +28,7 @@ message CreateSelectionResponse{
 
 // FindByGroupId
 message FindByGroupIdSelectionRequest{
-  string userId = 1;
+  string bannId = 1;
 }
 
 message FindByGroupIdSelectionResponse{
