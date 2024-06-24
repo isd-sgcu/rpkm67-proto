@@ -15,19 +15,30 @@ service UserService {
 message User{
   string id = 1;
   string email = 2;
-  string password = 3;
-  string firstname = 4;
-  string lastname = 5;
-  string role = 6;
+  string nickname = 3;
+  string title = 4;
+  string firstname = 5;
+  string lastname = 6;
+  int32 year = 7;
+  string faculty = 8;
+  string tel = 9;
+  string parentTel = 10;
+  string parent = 11;
+  string foodAllergy = 12;
+  string drugAllergy = 13;
+  string illness = 14;
+  string role = 15;
+  string photoKey = 16;
+  string photoUrl = 17;
+  string baan = 18;
+  string groupId = 19;
+  int32 receiveGift = 20;
 }
 
 // Create
 message CreateUserRequest{
   string email = 1;
-  string password = 2;
-  string firstname = 3;
-  string lastname = 4;
-  string role = 5;
+  string role = 2;
 }
 
 message CreateUserResponse{
@@ -56,10 +67,24 @@ message FindByEmailResponse{
 message UpdateUserRequest{
   string id = 1;
   string email = 2;
-  string password = 3;
-  string firstname = 4;
-  string lastname = 5;
-  string role = 6;
+  string nickname = 3;
+  string title = 4;
+  string firstname = 5;
+  string lastname = 6;
+  int32 year = 7;
+  string faculty = 8;
+  string tel = 9;
+  string parentTel = 10;
+  string parent = 11;
+  string foodAllergy = 12;
+  string drugAllergy = 13;
+  string illness = 14;
+  string role = 15;
+  string photoKey = 16;
+  string photoUrl = 17;
+  string baan = 18;
+  string groupId = 19;
+  int32 receiveGift = 20;
 }
 
 message UpdateUserResponse{
