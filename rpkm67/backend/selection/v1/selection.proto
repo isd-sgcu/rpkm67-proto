@@ -7,13 +7,20 @@ option go_package = "rpkm67/backend/selection/v1";
 service SelectionService {
   rpc Create(CreateSelectionRequest) returns (CreateSelectionResponse){}
   rpc FindByGroupId(FindByGroupIdSelectionRequest) returns (FindByGroupIdSelectionResponse) {}
-  rpc Update(UpdateSelectionRequest) returns (UpdateSelectionResponse){}
+  rpc Delete(DeleteSelectionRequest) returns (DeleteSelectionResponse){}
+  rpc CountByBaanId(CountByBaanIdSelectionRequest) returns (CountByBaanIdSelectionResponse){}
 }
 
 message Selection{
   string id = 1;
   string groupId = 2;
-  repeated string baanIds = 3;
+  string baanId = 3;
+  int32 order = 4;
+}
+
+message BaanCount{
+  string baanId = 1;
+  int32 count = 2;
 }
 
 // Create
@@ -35,11 +42,19 @@ message FindByGroupIdSelectionResponse{
   Selection selection = 1;
 }
 
-// Update
-message UpdateSelectionRequest{
-  Selection selection = 1;
+// Delete
+message DeleteSelectionRequest{
+  string id = 1;
 }
 
-message UpdateSelectionResponse{
+message DeleteSelectionResponse{
   bool success = 1;
+}
+
+// CountByBaanId
+message CountByBaanIdSelectionRequest{
+}
+
+message CountByBaanIdSelectionResponse{
+  repeated BaanCount baanCounts = 1;
 }
