@@ -38,7 +38,6 @@ message RefreshTokenResponse{
 
 // GetGoogleLoginUrl
 message GetGoogleLoginUrlRequest {
-  string redirectUrl = 1;
 }
 
 message GetGoogleLoginUrlResponse {
