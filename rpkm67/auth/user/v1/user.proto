@@ -9,7 +9,6 @@ service UserService {
   rpc FindOne(FindOneUserRequest) returns (FindOneUserResponse){}
   rpc FindByEmail(FindByEmailRequest) returns (FindByEmailResponse){}
   rpc Update(UpdateUserRequest) returns (UpdateUserResponse){}
-  // rpc Delete(DeleteRequest) returns (DeleteResponse){}
 }
 
 message User{
@@ -90,12 +89,3 @@ message UpdateUserRequest{
 message UpdateUserResponse{
   User user = 1;
 }
-
-// Delete
-// message DeleteRequest{
-//   string id = 1;
-// }
-
-// message DeleteResponse{
-//   bool success = 1;
-// }
