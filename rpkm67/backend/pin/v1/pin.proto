@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package rpkm67.backend.pin.v1;
+
+option go_package = "rpkm67/backend/pin/v1";
+
+service PinService {
+  rpc FindAll(FindAllPinRequest) returns (FindAllPinResponse){}
+  rpc ResetPin(ResetPinRequest) returns (ResetPinResponse) {}
+}
+
+message Pin{
+  string workshopId = 1;
+  string code = 2;
+}
+
+// FindAll
+message FindAllPinRequest{
+}
+
+message FindAllPinResponse{
+  repeated Pin pins = 1;
+}
+
+// ResetPin
+message ResetPinRequest{
+  string workshopId = 1;
+}
+
+message ResetPinResponse{
+  bool success = 1;
+}
