@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package rpkm67.backend.stamp.v1;
+
+option go_package = "rpkm67/backend/stamp/v1";
+
+service StampService {
+  rpc GetByUserId(GetByUserIdStampRequest) returns (GetByUserIdStampResponse){}
+  rpc Stamp(StampRequest) returns (StampResponse) {}
+}
+
+message Stamp{
+  string id = 1;
+  string userId = 2;
+  int32 pointA = 3;
+  int32 pointB = 4;
+  int32 pointC = 5;
+  int32 pointD = 6;
+  bool workshop1 = 7;
+  bool workshop2 = 8;
+  bool workshop3 = 9;
+  bool workshop4 = 10;
+  bool workshop5 = 11;
+  bool landmark1 = 12;
+  bool landmark2 = 13;
+  bool landmark3 = 14;
+  bool landmark4 = 15;
+  bool institute1 = 16;
+  bool institute2 = 17;
+}
+
+// GetByUserId
+message GetByUserIdStampRequest{
+  string userId = 1;
+}
+
+message GetByUserIdStampResponse{
+  Stamp stamp = 1;
+}
+
+// Stamp
+message StampRequest{
+  string userId = 1;
+  string activityId = 2;
+}
+
+message StampResponse{
+  Stamp stamp = 1;
+}
