@@ -26,7 +26,8 @@ message BaanCount{
 // Create
 message CreateSelectionRequest{
   string groupId = 1;
-  repeated string baanIds = 2;
+  string baanId = 2;
+  int32 order = 3;
 }
 
 message CreateSelectionResponse{
