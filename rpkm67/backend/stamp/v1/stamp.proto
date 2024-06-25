@@ -6,7 +6,7 @@ option go_package = "rpkm67/backend/stamp/v1";
 
 service StampService {
   rpc FindByUserId(FindByUserIdStampRequest) returns (FindByUserIdStampResponse){}
-  rpc Stamp(StampRequest) returns (StampResponse) {}
+  rpc StampByUserId(StampByUserIdRequest) returns (StampByUserIdResponse) {}
 }
 
 message Stamp{
@@ -38,12 +38,12 @@ message FindByUserIdStampResponse{
   Stamp stamp = 1;
 }
 
-// Stamp
-message StampRequest{
+// StampByUserId
+message StampByUserIdRequest{
   string userId = 1;
   string activityId = 2;
 }
 
-message StampResponse{
+message StampByUserIdResponse{
   Stamp stamp = 1;
 }
