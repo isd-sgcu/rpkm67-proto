@@ -16,7 +16,9 @@ message Object{
 }
 
 // FindByKey
-message FindByKeyObjectRequest{}
+message FindByKeyObjectRequest{
+  string key = 1;
+}
 
 message FindByKeyObjectResponse{
   Object object = 1;
