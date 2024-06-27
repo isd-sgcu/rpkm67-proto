@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $go_module = "github.com/isd-sgcu/johnjud-go-proto";
+my $go_module = "github.com/isd-sgcu/rpkm67-go-proto";
 my $proto_package = "";
 
 my $source_dir = scalar(@ARGV) < 1 ? "*" : "${ARGV[0]}";

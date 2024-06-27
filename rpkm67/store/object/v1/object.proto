@@ -12,11 +12,13 @@ service ObjectService {
 
 message Object{
   string url = 1;
-  string objectKey = 2;
+  string key = 2;
 }
 
 // FindByKey
-message FindByKeyObjectRequest{}
+message FindByKeyObjectRequest{
+  string key = 1;
+}
 
 message FindByKeyObjectResponse{
   Object object = 1;
@@ -34,7 +36,7 @@ message UploadObjectResponse{
 
 // DeleteByKey
 message DeleteByKeyObjectRequest{
-  string objectKey = 1;
+  string key = 1;
 }
 
 message DeleteByKeyObjectResponse{

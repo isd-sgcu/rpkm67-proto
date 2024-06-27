@@ -7,11 +7,8 @@ option go_package = "rpkm67/auth/auth/v1";
 service AuthService {
   rpc Validate(ValidateRequest) returns (ValidateResponse) {}
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {}
-  rpc SignUp(SignUpRequest) returns (SignUpResponse) {}
-  rpc SignIn(SignInRequest) returns (SignInResponse) {}
-  rpc SignOut(SignOutRequest) returns (SignOutResponse) {}
-  rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse) {}
-  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse) {}
+  rpc GetGoogleLoginUrl(GetGoogleLoginUrlRequest) returns (GetGoogleLoginUrlResponse) {}
+  rpc VerifyGoogleLogin(VerifyGoogleLoginRequest) returns (VerifyGoogleLoginResponse) {}
 }
 
 message Credential{
@@ -30,7 +27,7 @@ message ValidateResponse{
   string role = 2;
 }
 
-// Redeem Refresh Token
+// RefreshToken
 message RefreshTokenRequest{
   string refreshToken = 1;
 }
@@ -39,54 +36,19 @@ message RefreshTokenResponse{
   Credential credential = 1;
 }
 
-// Sign up
-message SignUpRequest {
-  string studentId = 1;
-  string password = 2;
-  string firstname = 3;
-  string lastname = 4;
-  string tel = 5;
-  string role = 6;
+// GetGoogleLoginUrl
+message GetGoogleLoginUrlRequest {
 }
 
-message SignUpResponse {
-  Credential credential = 1;
-}
-
-// Sign in
-message SignInRequest {
-  string studentId = 1;
-  string password = 2;
-}
-
-message SignInResponse {
-  Credential credential = 1;
-}
-
-// Sign out
-message SignOutRequest {
-  string token = 1;
-}
-
-message SignOutResponse {
-  bool isSuccess = 1;
-}
-
-// Forgot password
-message ForgotPasswordRequest {
-  string tel = 1;
-}
-
-message ForgotPasswordResponse {
+message GetGoogleLoginUrlResponse {
   string url = 1;
 }
 
-// Reset password
-message ResetPasswordRequest {
-  string token = 1;
-  string password = 2;
+// VerifyGoogleLogin
+message VerifyGoogleLoginRequest {
+  string code = 1;
 }
 
-message ResetPasswordResponse {
-  bool isSuccess = 1;
+message VerifyGoogleLoginResponse {
+  Credential credential = 1;
 }
