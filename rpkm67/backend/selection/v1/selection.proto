@@ -40,7 +40,7 @@ message FindByGroupIdSelectionRequest{
 }
 
 message FindByGroupIdSelectionResponse{
-  Selection selection = 1;
+  repeated Selection selections = 1;
 }
 
 // Delete
