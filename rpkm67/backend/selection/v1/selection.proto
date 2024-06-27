@@ -43,7 +43,7 @@ message FindByGroupIdSelectionResponse{
   repeated Selection selections = 1;
 }
 
-// Delete 
+// Delete
 message DeleteSelectionRequest{
   string id = 1;
 }
