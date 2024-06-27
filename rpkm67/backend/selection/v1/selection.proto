@@ -45,7 +45,7 @@ message FindByGroupIdSelectionResponse{
 
 // Delete
 message DeleteSelectionRequest{
-  string id = 1;
+  string groupId = 1;
 }
 
 message DeleteSelectionResponse{
