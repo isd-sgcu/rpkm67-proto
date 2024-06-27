@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package rpkm67.backend.group.v1;
 
-import "rpkm67/backend/baan/v1/baan.proto";
-
 option go_package = "rpkm67/backend/group/v1";
 
 service GroupService {
@@ -21,7 +19,7 @@ message Group{
   string leaderID = 2;
   string token = 3;
   repeated UserInfo members = 4;
-  repeated rpkm67.backend.baan.v1.BaanInfo baans = 5;
+  bool isConfirmed = 5;
 }
 
 message UserInfo {
