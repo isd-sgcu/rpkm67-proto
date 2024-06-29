@@ -19,7 +19,7 @@ message Credential{
 
 // Validate
 message ValidateRequest{
-  string token = 1;
+  string accessToken = 1;
 }
 
 message ValidateResponse{
