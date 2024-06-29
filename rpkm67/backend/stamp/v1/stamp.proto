@@ -16,17 +16,7 @@ message Stamp{
   int32 pointB = 4;
   int32 pointC = 5;
   int32 pointD = 6;
-  bool workshop1 = 7;
-  bool workshop2 = 8;
-  bool workshop3 = 9;
-  bool workshop4 = 10;
-  bool workshop5 = 11;
-  bool landmark1 = 12;
-  bool landmark2 = 13;
-  bool landmark3 = 14;
-  bool landmark4 = 15;
-  bool institute1 = 16;
-  bool institute2 = 17;
+  string stamp = 7;
 }
 
 // FindByUserId
