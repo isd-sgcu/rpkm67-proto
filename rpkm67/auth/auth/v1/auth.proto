@@ -51,4 +51,5 @@ message VerifyGoogleLoginRequest {
 
 message VerifyGoogleLoginResponse {
   Credential credential = 1;
+  string userId = 2;
 }
