@@ -7,10 +7,11 @@ option go_package = "rpkm67/backend/pin/v1";
 service PinService {
   rpc FindAll(FindAllPinRequest) returns (FindAllPinResponse){}
   rpc ResetPin(ResetPinRequest) returns (ResetPinResponse) {}
+  rpc CheckPin(CheckPinRequest) returns (CheckPinResponse) {}
 }
 
 message Pin{
-  string workshopId = 1;
+  string activityId = 1;
   string code = 2;
 }
 
@@ -24,9 +25,19 @@ message FindAllPinResponse{
 
 // ResetPin
 message ResetPinRequest{
-  string workshopId = 1;
+  string activityId = 1;
 }
 
 message ResetPinResponse{
   bool success = 1;
+}
+
+// CheckPin
+message CheckPinRequest{
+  string activityId = 1;
+  string code = 2;
+}
+
+message CheckPinResponse{
+  bool isMatch = 1;
 }
