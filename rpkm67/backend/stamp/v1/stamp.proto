@@ -5,6 +5,7 @@ package rpkm67.backend.stamp.v1;
 option go_package = "rpkm67/backend/stamp/v1";
 
 service StampService {
+  rpc Create(CreateStampRequest) returns (CreateStampResponse){}
   rpc FindByUserId(FindByUserIdStampRequest) returns (FindByUserIdStampResponse){}
   rpc StampByUserId(StampByUserIdRequest) returns (StampByUserIdResponse) {}
 }
@@ -17,6 +18,20 @@ message Stamp{
   int32 pointC = 5;
   int32 pointD = 6;
   string stamp = 7;
+}
+
+// Create
+message CreateStampRequest{
+  string userId = 1;
+  int32 pointA = 2;
+  int32 pointB = 3;
+  int32 pointC = 4;
+  int32 pointD = 5;
+  string stamp = 6;
+}
+
+message CreateStampResponse{
+  Stamp stamp = 1;
 }
 
 // FindByUserId
