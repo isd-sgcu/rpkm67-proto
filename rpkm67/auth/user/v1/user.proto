@@ -65,27 +65,26 @@ message FindByEmailResponse{
 // Update
 message UpdateUserRequest{
   string id = 1;
-  string email = 2;
-  string nickname = 3;
-  string title = 4;
-  string firstname = 5;
-  string lastname = 6;
-  int32 year = 7;
-  string faculty = 8;
-  string tel = 9;
-  string parentTel = 10;
-  string parent = 11;
-  string foodAllergy = 12;
-  string drugAllergy = 13;
-  string illness = 14;
-  string role = 15;
-  string photoKey = 16;
-  string photoUrl = 17;
-  string baan = 18;
-  string groupId = 19;
-  int32 receiveGift = 20;
+  string nickname = 2;
+  string title = 3;
+  string firstname = 4;
+  string lastname = 5;
+  int32 year = 6;
+  string faculty = 7;
+  string tel = 8;
+  string parentTel = 9;
+  string parent = 10;
+  string foodAllergy = 11;
+  string drugAllergy = 12;
+  string illness = 13;
+  string role = 14;
+  string photoKey = 15;
+  string photoUrl = 16;
+  string baan = 17;
+  string groupId = 18;
+  int32 receiveGift = 19;
 }
 
 message UpdateUserResponse{
-  User user = 1;
+  bool success = 1;
 }
