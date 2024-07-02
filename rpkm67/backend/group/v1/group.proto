@@ -11,7 +11,6 @@ service GroupService {
   rpc Join(JoinGroupRequest) returns (JoinGroupResponse) {}
   rpc DeleteMember(DeleteMemberGroupRequest) returns (DeleteMemberGroupResponse){}
   rpc Leave(LeaveGroupRequest) returns (LeaveGroupResponse){}
-  rpc SelectBaan(SelectBaanRequest) returns (SelectBaanResponse) {}
 }
 
 message Group{
@@ -86,14 +85,4 @@ message LeaveGroupRequest{
 
 message LeaveGroupResponse{
   Group group = 1;
-}
-
-// Select Baan
-message SelectBaanRequest{
-  string userId = 1;
-  repeated string baans = 2;
-}
-
-message SelectBaanResponse{
-  bool success = 1;
 }
