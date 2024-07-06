@@ -5,7 +5,7 @@ package rpkm67.backend.group.v1;
 option go_package = "rpkm67/backend/group/v1";
 
 service GroupService {
-  rpc FindOne(FindOneGroupRequest) returns (FindOneGroupResponse) {}
+  rpc FindByUserId(FindByUserIdGroupRequest) returns (FindByUserIdGroupResponse) {}
   rpc FindByToken(FindByTokenGroupRequest) returns (FindByTokenGroupResponse) {}
   rpc UpdateConfirm(UpdateConfirmGroupRequest) returns (UpdateConfirmGroupResponse) {}
   rpc Join(JoinGroupRequest) returns (JoinGroupResponse) {}
@@ -28,12 +28,12 @@ message UserInfo {
   string imageUrl = 4;
 }
 
-// FindOne
-message FindOneGroupRequest{
-  string id = 1;
+// FindByUserId
+message FindByUserIdGroupRequest{
+  string userId = 1;
 }
 
-message FindOneGroupResponse{
+message FindByUserIdGroupResponse{
   Group group = 1;
 }
 
