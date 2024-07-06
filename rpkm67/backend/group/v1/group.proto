@@ -50,7 +50,7 @@ message FindByTokenGroupResponse{
 
 // Update IsConfirmed
 message UpdateConfirmGroupRequest{
-  string userId = 1;
+  string leaderId = 1;
   bool isConfirmed = 2;
 }
 
