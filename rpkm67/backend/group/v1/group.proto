@@ -91,6 +91,7 @@ message LeaveGroupResponse{
 // Confirm Selection
 message ConfirmSelectionGroupRequest{
   string groupId = 1;
+  string userId = 2;
 }
 
 message ConfirmSelectionGroupResponse{
