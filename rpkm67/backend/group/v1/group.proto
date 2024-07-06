@@ -5,13 +5,12 @@ package rpkm67.backend.group.v1;
 option go_package = "rpkm67/backend/group/v1";
 
 service GroupService {
-  rpc FindOne(FindOneGroupRequest) returns (FindOneGroupResponse) {}
+  rpc FindByUserId(FindByUserIdGroupRequest) returns (FindByUserIdGroupResponse) {}
   rpc FindByToken(FindByTokenGroupRequest) returns (FindByTokenGroupResponse) {}
-  rpc Update(UpdateGroupRequest) returns (UpdateGroupResponse) {}
+  rpc UpdateConfirm(UpdateConfirmGroupRequest) returns (UpdateConfirmGroupResponse) {}
   rpc Join(JoinGroupRequest) returns (JoinGroupResponse) {}
   rpc DeleteMember(DeleteMemberGroupRequest) returns (DeleteMemberGroupResponse){}
   rpc Leave(LeaveGroupRequest) returns (LeaveGroupResponse){}
-  rpc ConfirmSelection(ConfirmSelectionGroupRequest) returns (ConfirmSelectionGroupResponse){}
 }
 
 message Group{
@@ -29,16 +28,16 @@ message UserInfo {
   string imageUrl = 4;
 }
 
-//Find One
-message FindOneGroupRequest{
+// FindByUserId
+message FindByUserIdGroupRequest{
   string userId = 1;
 }
 
-message FindOneGroupResponse{
+message FindByUserIdGroupResponse{
   Group group = 1;
 }
 
-// Find By Token
+// FindByToken
 message FindByTokenGroupRequest{
   string token = 1;
 }
@@ -49,17 +48,16 @@ message FindByTokenGroupResponse{
   UserInfo leader = 3;
 }
 
-// Update
-message UpdateGroupRequest{
-  Group group = 1;
-  string leaderId = 2;
+// Update IsConfirmed
+message UpdateConfirmGroupRequest{
+  string userId = 1;
 }
 
-message UpdateGroupResponse{
+message UpdateConfirmGroupResponse{
   Group group = 1;
 }
 
-//Join
+// Add new member to group
 message JoinGroupRequest{
   string token = 1;
   string userId = 2;
@@ -69,7 +67,7 @@ message JoinGroupResponse{
   Group group = 1;
 }
 
-// Delete
+// Delete member from group
 message DeleteMemberGroupRequest{
   string userId = 1;
   string leaderId = 2;
@@ -79,20 +77,11 @@ message DeleteMemberGroupResponse{
   Group group = 1;
 }
 
-// Leave
+// Leave group
 message LeaveGroupRequest{
   string userId = 1;
 }
 
 message LeaveGroupResponse{
   Group group = 1;
-}
-
-// Confirm Selection
-message ConfirmSelectionGroupRequest{
-  string userId = 1;
-}
-
-message ConfirmSelectionGroupResponse{
-  bool success = 1;
 }
