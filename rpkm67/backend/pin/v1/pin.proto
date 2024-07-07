@@ -29,7 +29,7 @@ message ResetPinRequest{
 }
 
 message ResetPinResponse{
-  bool success = 1;
+  Pin pin = 1;
 }
 
 // CheckPin
