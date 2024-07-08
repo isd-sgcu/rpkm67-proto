@@ -26,6 +26,8 @@ message CreateCheckInRequest{
 
 message CreateCheckInResponse{
   CheckIn checkIn = 1;
+  string firstname = 2;
+  string lastname = 3;
 }
 
 // FindByUserId
