@@ -13,10 +13,9 @@ service SelectionService {
 }
 
 message Selection{
-  string id = 1;
-  string groupId = 2;
-  string baanId = 3;
-  int32 order = 4;
+  string groupId = 1;
+  string baanId = 2;
+  int32 order = 3;
 }
 
 message BaanCount{
@@ -46,11 +45,13 @@ message FindByGroupIdSelectionResponse{
 
 // Update
 message UpdateSelectionRequest{
-  Selection selection = 1;
+  string groupId = 1;
+  string baanId = 2;
+  int32 order = 3;
 }
 
 message UpdateSelectionResponse{
-  bool success = 1;
+  Selection selection = 1;
 }
 
 // Delete
