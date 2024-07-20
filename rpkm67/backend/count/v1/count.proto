@@ -10,7 +10,8 @@ service CountService {
 }
 
 message Count{
-  string name = 1;
+  string id = 1;
+  string name = 2;
 }
 
 // FindAll
