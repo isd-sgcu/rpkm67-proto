@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package rpkm67.backend.count.v1;
+
+option go_package = "rpkm67/backend/count/v1";
+
+service CountService {
+  rpc FindAll(FindAllCountRequest) returns (FindAllCountResponse){}
+  rpc Create(CreateCountRequest) returns (CreateCountResponse) {}
+}
+
+message Count{
+  string name = 1;
+}
+
+// FindAll
+message FindAllCountRequest{
+}
+
+message FindAllCountResponse{
+  repeated Count counts = 1;
+}
+
+// Create
+message CreateCountRequest{
+  string name = 1;
+}
+
+message CreateCountResponse{
+  Count count = 1;
+}
