@@ -32,6 +32,7 @@ message FindByUserIdStampResponse{
 message StampByUserIdRequest{
   string userId = 1;
   string activityId = 2;
+  string answer = 3;
 }
 
 message StampByUserIdResponse{
